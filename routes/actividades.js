@@ -1,0 +1,10 @@
+const router = require("express").Router();
+const controller = require("../controllers/actividadesController");
+router.get("fetch/actividades", controller.getAll);
+router.get('/actividades/:user',controller.getSpecific);
+router.get('/actividades/dia/:id_actividad',controller.getSpecificTime);
+router.post("/actividades", controller.addActividad);
+router.put("/actividades/put/:user", controller.updateActividad);
+router.put("/actividades/putStatus/:user", controller.updateStatus);
+router.delete("/actividades/delete/:user", controller.delete);
+module.exports = router;
